@@ -258,5 +258,26 @@
             </div>
         </div>
     </div>
+    // Import the functions you need from the SDKs you need
+import { initializeApp } from "firebase/app";
+import { getAnalytics } from "firebase/analytics";
+// TODO: Add SDKs for Firebase products that you want to use
+// https://firebase.google.com/docs/web/setup#available-libraries
+
+// Your web app's Firebase configuration
+// For Firebase JS SDK v7.20.0 and later, measurementId is optional
+const firebaseConfig = {
+  apiKey: "AIzaSyDUf0osOhnf2jif-grTPYPdXhFsIO3sHL4",
+  authDomain: "gj-invitation.firebaseapp.com",
+  projectId: "gj-invitation",
+  storageBucket: "gj-invitation.firebasestorage.app",
+  messagingSenderId: "293486542655",
+  appId: "1:293486542655:web:6cda1ad8a4e3cf15e31d8a",
+  measurementId: "G-S7B8WQ7M0F"
+};
+
+// Initialize Firebase
+const app = initializeApp(firebaseConfig);
+const analytics = getAnalytics(app);
 </body>
 </html>
