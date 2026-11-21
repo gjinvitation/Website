@@ -1,1 +1,211 @@
 
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: 'Noto Sans Gujarati', sans-serif;
+  background: #edf5e9;
+  color: #18351d;
+}
+
+/* HEADER */
+
+.header {
+  background: linear-gradient(90deg, #064c22, #16833b);
+  color: white;
+  text-align: center;
+  padding: 18px;
+}
+
+.header h1 {
+  font-size: 32px;
+  margin: 0;
+}
+
+.header p {
+  color: #ffe68a;
+  margin: 5px;
+}
+
+/* MAIN LAYOUT */
+
+.container {
+  max-width: 1200px;
+  margin: 20px auto;
+  padding: 12px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 15px;
+}
+
+.editor,
+.preview-panel {
+  background: white;
+  padding: 18px;
+  border-radius: 18px;
+  border: 1px solid #d6e5d5;
+  box-shadow: 0 4px 15px #00000012;
+}
+
+.editor h2,
+.preview-panel h2 {
+  background: #08712e;
+  color: white;
+  padding: 13px;
+  border-radius: 10px;
+  text-align: center;
+  font-size: 20px;
+}
+
+/* INPUTS */
+
+label {
+  display: block;
+  font-weight: bold;
+  margin-top: 13px;
+}
+
+input,
+select {
+  width: 100%;
+  padding: 11px;
+  margin-top: 6px;
+  border: 1px solid #b7c8b9;
+  border-radius: 8px;
+  font-size: 15px;
+  background: white;
+}
+
+input[type="color"] {
+  height: 45px;
+  padding: 4px;
+}
+
+input[type="range"] {
+  accent-color: #08712e;
+}
+
+hr {
+  border: 0;
+  border-top: 1px solid #ddd;
+  margin: 20px 0;
+}
+
+/* BUTTONS */
+
+button {
+  border: 0;
+  padding: 12px;
+  background: #08712e;
+  color: white;
+  border-radius: 8px;
+  font-size: 15px;
+  font-weight: bold;
+  cursor: pointer;
+  margin-top: 12px;
+}
+
+button:active {
+  transform: scale(0.98);
+}
+
+.buttons {
+  display: flex;
+  gap: 10px;
+}
+
+.buttons button {
+  flex: 1;
+}
+
+#addPage {
+  width: 100%;
+  background: #d8eedb;
+  color: #075323;
+}
+
+/* PREVIEW */
+
+.preview-panel {
+  text-align: center;
+}
+
+.invitation {
+  position: relative;
+  width: 100%;
+  max-width: 390px;
+  aspect-ratio: 9 / 16;
+  margin: 15px auto;
+  overflow: hidden;
+  border: 5px solid #173d25;
+  border-radius: 22px;
+  background: #fff3df;
+}
+
+#bg,
+#vid {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+#vid {
+  display: none;
+}
+
+#words {
+  position: absolute;
+  top: 50%;
+  left: 5%;
+  width: 90%;
+  transform: translateY(-50%);
+  text-align: center;
+  z-index: 2;
+  color: #6d174d;
+  font-size: 22px;
+  font-weight: bold;
+  text-shadow: 0 1px 3px white;
+  overflow-wrap: anywhere;
+}
+
+#words div {
+  margin: 13px 0;
+}
+
+#t {
+  font-size: 1.25em;
+}
+
+.preview-note {
+  color: #617461;
+  font-size: 13px;
+}
+
+footer {
+  text-align: center;
+  padding: 20px;
+  background: #d9f0d9;
+  color: #075323;
+  font-weight: bold;
+}
+
+/* MOBILE DESIGN */
+
+@media (max-width: 750px) {
+  .container {
+    grid-template-columns: 1fr;
+  }
+
+  .header h1 {
+    font-size: 26px;
+  }
+
+  .invitation {
+    max-width: 310px;
+  }
+}
+
