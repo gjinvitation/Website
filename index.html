@@ -1,494 +1,120 @@
 <!DOCTYPE html>
 <html lang="gu">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>GJ Invitation - Traditional Indian Invitation Art</title>
-    <!-- Google Fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
-    <!-- FontAwesome Icons -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    
-    <style>
-        :root {
-            --primary-color: #8B0000;
-            --accent-gold: #D4AF37;
-            --light-bg: #FDFBF7;
-            --card-bg: #F5EFEB;
-            --text-dark: #333333;
-            --whatsapp-green: #25D366;
-            --whatsapp-dark: #1EBE5D;
-        }
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            font-family: 'Poppins', sans-serif;
-        }
+<title>GJ Invitation Maker</title>
 
-        body {
-            background-color: var(--light-bg);
-            color: var(--text-dark);
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            min-height: 100vh;
-        }
+<link rel="stylesheet" href="style.css">
 
-        .mobile-container {
-            width: 100%;
-            max-width: 480px;
-            background: #FFF9F0;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.15);
-            position: relative;
-            overflow: hidden;
-            border: 4px solid var(--accent-gold);
-        }
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Gujarati:wght@400;600;700&family=Noto+Serif+Gujarati:wght@400;700&display=swap" rel="stylesheet">
 
-        .toran-border {
-            background: linear-gradient(90deg, #8B0000, #D4AF37, #8B0000);
-            height: 12px;
-            width: 100%;
-        }
-
-        header {
-            text-align: center;
-            padding: 20px 15px 10px;
-            background: linear-gradient(to bottom, #fff3e0, #FDFBF7);
-            position: relative;
-        }
-
-        .menu-icon {
-            position: absolute;
-            left: 20px;
-            top: 25px;
-            background: var(--primary-color);
-            color: #fff;
-            padding: 8px 12px;
-            border-radius: 6px;
-            cursor: pointer;
-            font-size: 1.1rem;
-        }
-
-        .brand-title {
-            font-family: 'Playfair Display', serif;
-            font-size: 2.2rem;
-            color: var(--primary-color);
-            font-weight: 700;
-        }
-
-        .brand-tagline {
-            font-size: 0.85rem;
-            color: #666;
-            margin-top: 2px;
-            letter-spacing: 1px;
-        }
-
-        .contact-banner {
-            background: var(--whatsapp-green);
-            color: white;
-            margin: 15px auto;
-            width: 90%;
-            padding: 12px;
-            border-radius: 50px;
-            text-align: center;
-            font-size: 1.4rem;
-            font-weight: 700;
-            box-shadow: 0 4px 15px rgba(37, 211, 102, 0.3);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            gap: 10px;
-            text-decoration: none;
-        }
-
-        .contact-banner i {
-            font-size: 1.6rem;
-        }
-
-        .order-note {
-            text-align: center;
-            font-size: 0.8rem;
-            color: #555;
-            margin-bottom: 15px;
-            font-weight: 500;
-        }
-
-        .section-title {
-            text-align: center;
-            font-family: 'Playfair Display', serif;
-            font-size: 1.8rem;
-            color: var(--primary-color);
-            margin: 20px 0 5px;
-        }
-
-        .section-subtitle {
-            text-align: center;
-            font-size: 0.9rem;
-            color: #777;
-            margin-bottom: 20px;
-        }
-
-        /* Product Showcase Card with Video */
-        .product-card {
-            background: var(--card-bg);
-            margin: 0 15px 20px;
-            padding: 20px;
-            border-radius: 16px;
-            border: 1px solid rgba(212, 175, 55, 0.4);
-            display: flex;
-            gap: 15px;
-            align-items: center;
-            box-shadow: 0 6px 15px rgba(0,0,0,0.05);
-        }
-
-        .product-video-container {
-            width: 45%;
-            border-radius: 10px;
-            overflow: hidden;
-            box-shadow: 0 4px 10px rgba(0,0,0,0.2);
-            border: 2px solid var(--accent-gold);
-            background: #000;
-        }
-
-        .product-video-container video {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            display: block;
-        }
-
-        .product-details {
-            width: 55%;
-        }
-
-        .product-title {
-            font-size: 1.1rem;
-            font-weight: 700;
-            color: var(--primary-color);
-            line-height: 1.3;
-        }
-
-        .product-price {
-            background: #fff;
-            display: inline-block;
-            padding: 6px 15px;
-            border-radius: 8px;
-            font-size: 1.5rem;
-            font-weight: 700;
-            color: #000;
-            margin: 10px 0;
-            border: 1px dashed var(--accent-gold);
-        }
-
-        .order-btn {
-            background: var(--primary-color);
-            color: white;
-            border: none;
-            width: 100%;
-            padding: 10px;
-            border-radius: 8px;
-            font-weight: 600;
-            font-size: 0.95rem;
-            cursor: pointer;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            gap: 8px;
-            text-decoration: none;
-            transition: background 0.3s ease;
-        }
-
-        .order-btn:hover {
-            background: #a30000;
-        }
-
-        .feature-list {
-            list-style: none;
-            margin-top: 15px;
-            background: #fff;
-            padding: 12px;
-            border-radius: 10px;
-            font-size: 0.8rem;
-        }
-
-        .feature-list li {
-            margin-bottom: 6px;
-            display: flex;
-            align-items: center;
-            gap: 8px;
-            color: #444;
-        }
-
-        .feature-list li i {
-            color: var(--accent-gold);
-        }
-
-        .info-banner {
-            background: linear-gradient(135deg, #fff3e0, #ffe0b2);
-            margin: 0 15px 25px;
-            padding: 15px;
-            border-radius: 10px;
-            text-align: center;
-            border: 1px solid var(--accent-gold);
-        }
-
-        .info-banner p {
-            font-size: 0.9rem;
-            color: #444;
-            font-weight: 600;
-            margin-bottom: 5px;
-        }
-
-        .languages {
-            font-size: 0.85rem;
-            color: var(--primary-color);
-            font-weight: 700;
-        }
-
-        .categories-section {
-            padding: 0 15px 20px;
-        }
-
-        .categories-grid {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 15px;
-        }
-
-        .category-item {
-            background: #fff;
-            padding: 15px 10px;
-            border-radius: 12px;
-            text-align: center;
-            box-shadow: 0 3px 8px rgba(0,0,0,0.05);
-            border: 1px solid rgba(212, 175, 55, 0.2);
-            cursor: pointer;
-            transition: transform 0.2s ease;
-        }
-
-        .category-item:hover {
-            transform: translateY(-3px);
-        }
-
-        .category-icon {
-            width: 50px;
-            height: 50px;
-            background: #fdf6ec;
-            border-radius: 50%;
-            margin: 0 auto 8px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: var(--primary-color);
-            font-size: 1.2rem;
-            border: 1px solid var(--accent-gold);
-        }
-
-        .category-name {
-            font-size: 0.75rem;
-            font-weight: 600;
-            color: #333;
-            line-height: 1.2;
-        }
-
-        .whatsapp-cta {
-            background: linear-gradient(135deg, var(--whatsapp-green), var(--whatsapp-dark));
-            color: white;
-            margin: 10px 15px 25px;
-            padding: 15px;
-            border-radius: 50px;
-            text-align: center;
-            font-size: 1.1rem;
-            font-weight: 700;
-            box-shadow: 0 6px 20px rgba(37, 211, 102, 0.4);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            gap: 12px;
-            text-decoration: none;
-            letter-spacing: 0.5px;
-        }
-
-        .whatsapp-cta i {
-            font-size: 1.5rem;
-        }
-
-        .footer-features {
-            background: #5c0000;
-            color: white;
-            padding: 20px 15px;
-            display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            gap: 15px;
-            border-top: 3px solid var(--accent-gold);
-        }
-
-        .footer-feature-box {
-            display: flex;
-            align-items: center;
-            gap: 10px;
-        }
-
-        .footer-feature-box i {
-            font-size: 1.5rem;
-            color: var(--accent-gold);
-        }
-
-        .footer-feature-box div h4 {
-            font-size: 0.8rem;
-            font-weight: 600;
-        }
-
-        .footer-feature-box div p {
-            font-size: 0.7rem;
-            color: #ccc;
-        }
-
-        .bottom-tagline {
-            background: #3b0000;
-            color: var(--accent-gold);
-            text-align: center;
-            padding: 12px;
-            font-size: 0.8rem;
-            letter-spacing: 1px;
-            font-family: 'Playfair Display', serif;
-        }
-    </style>
 </head>
+
 <body>
 
-    <div class="mobile-container">
-        <!-- Top Toran -->
-        <div class="toran-border"></div>
+<header class="header">
+  <h1>💌 GJ Invitation</h1>
+  <p>Create • Edit • Download Your Invitation</p>
+</header>
 
-        <!-- Header Section -->
-        <header>
-            <div class="menu-icon"><i class="fa-solid fa-bars"></i></div>
-            <h1 class="brand-title">GJ Invitation</h1>
-            <p class="brand-tagline">✨ Tradition. Togetherness. Forever. ✨</p>
-        </header>
+<main class="container">
 
-        <!-- Top WhatsApp Number Button -->
-        <a href="https://wa.me/919904564376" class="contact-banner">
-            <i class="fa-brands fa-whatsapp"></i> 9904564376
-        </a>
-        <div class="order-note">Order Only for What's app DM</div>
+<!-- EDITOR -->
+<section class="editor">
 
-        <!-- Section: Explore Designs -->
-        <h2 class="section-title">Explore Designs</h2>
-        <p class="section-subtitle">❖ Our Categories ❖</p>
+<h2>✏️ તમારું આમંત્રણ એડિટ કરો</h2>
 
-        <!-- Main Product Card with yourvideo.mp4 -->
-        <div class="product-card">
-            <div class="product-video-container">
-                <video autoplay muted loop playsinline>
-                    <source src="yourvideo.mp4" type="video/mp4">
-                    તમારું બ્રાઉઝર વીડિયો સપોર્ટ કરતું નથી.
-                </video>
-            </div>
-            <div class="product-details">
-                <div class="product-title">સીમંત સંસ્કાર Video<br>(Baby Shower)</div>
-                <div class="product-price">380 /-</div>
-                <a href="https://wa.me/919904564376?text=Hi,%20I%20want%20to%20order%20Seemant%20Sanskar%20Video" class="order-btn">
-                    Order now <i class="fa-solid fa-chevron-right"></i>
-                </a>
-            </div>
-        </div>
+<label>પેજ પસંદ કરો</label>
+<select id="pageSelect"></select>
 
-        <!-- Features list -->
-        <div style="margin: 0 15px 20px;">
-            <ul class="feature-list">
-                <li><i class="fa-solid fa-gift"></i> Full HD Document in Video</li>
-                <li><i class="fa-solid fa-music"></i> Background Music</li>
-                <li><i class="fa-solid fa-pen-nib"></i> Customize Details</li>
-                <li><i class="fa-solid fa-truck-fast"></i> 24-48 Hours Delivery</li>
-            </ul>
-        </div>
+<label>શીર્ષક</label>
+<input id="title" value="સીમંત સંસ્કાર આમંત્રણ">
 
-        <!-- Language Notification Banner -->
-        <div class="info-banner">
-            <p>સીમંત સંસ્કાર, જન્મદિવસ, છઠી પૂજન જેવા ડિજિટલ આમંત્રણ બનાવી આપીએ.</p>
-            <div class="languages">English / Hindi / Gujarati in Available</div>
-        </div>
+<label>પરિવાર</label>
+<input id="family" value="બારૈયા પરિવાર">
 
-        <!-- Explore Categories Section -->
-        <div class="categories-section">
-            <p class="section-subtitle" style="margin-bottom: 15px;">❖ Explore Our Categories ❖</p>
-            <div class="categories-grid">
-                <div class="category-item">
-                    <div class="category-icon"><i class="fa-solid fa-users"></i></div>
-                    <div class="category-name">Wedding Invitations</div>
-                </div>
-                <div class="category-item">
-                    <div class="category-icon"><i class="fa-solid fa-baby"></i></div>
-                    <div class="category-name">Baby Shower Invitations</div>
-                </div>
-                <div class="category-item">
-                    <div class="category-icon"><i class="fa-solid fa-house"></i></div>
-                    <div class="category-name">House Warming Invitations</div>
-                </div>
-                <div class="category-item">
-                    <div class="category-icon"><i class="fa-solid fa-hands-praying"></i></div>
-                    <div class="category-name">Religious Invitations</div>
-                </div>
-                <div class="category-item">
-                    <div class="category-icon"><i class="fa-solid fa-cake-candles"></i></div>
-                    <div class="category-name">Birthday Invitations</div>
-                </div>
-                <div class="category-item">
-                    <div class="category-icon"><i class="fa-solid fa-ellipsis"></i></div>
-                    <div class="category-name">View All Categories</div>
-                </div>
-            </div>
-        </div>
+<label>સ્વાગત સંદેશ</label>
+<input id="welcome" value="આપનું હાર્દિક સ્વાગત કરે છે.">
 
-        <!-- Big WhatsApp CTA Button -->
-        <a href="https://wa.me/919904564376?text=Hi,%20I%20want%20to%20explore%20your%20digital%20invitation%20designs." class="whatsapp-cta">
-            <i class="fa-brands fa-whatsapp" style="font-size: 1.8rem;"></i> BUY NOW ON WHATSAPP
-        </a>
+<label>તારીખ અને સમય</label>
+<input id="date" value="૨૫ ડિસેમ્બર, બપોરે ૧૨ વાગ્યે">
 
-        <!-- Footer Trust Elements -->
-        <div class="footer-features">
-            <div class="footer-feature-box">
-                <i class="fa-solid fa-pen-to-square"></i>
-                <div>
-                    <h4>100%</h4>
-                    <p>Customizable</p>
-                </div>
-            </div>
-            <div class="footer-feature-box">
-                <i class="fa-solid fa-award"></i>
-                <div>
-                    <h4>Premium</h4>
-                    <p>Quality</p>
-                </div>
-            </div>
-            <div class="footer-feature-box">
-                <i class="fa-solid fa-shield-halved"></i>
-                <div>
-                    <h4>Secure</h4>
-                    <p>Payment</p>
-                </div>
-            </div>
-            <div class="footer-feature-box">
-                <i class="fa-solid fa-headset"></i>
-                <div>
-                    <h4>Customer</h4>
-                    <p>Support</p>
-                </div>
-            </div>
-        </div>
+<label>સ્થળ</label>
+<input id="place" value="સુરત">
 
-        <!-- Bottom Tagline -->
-        <div class="bottom-tagline">
-            ✦ Traditional Indian Invitation Art ✦
-        </div>
+<hr>
 
-        <!-- Bottom Toran -->
-        <div class="toran-border"></div>
-    </div>
+<label>ફોન્ટ પસંદ કરો</label>
+<select id="font">
+  <option value="'Noto Sans Gujarati', sans-serif">Noto Sans Gujarati</option>
+  <option value="'Noto Serif Gujarati', serif">Noto Serif Gujarati</option>
+  <option value="Arial">Arial</option>
+  <option value="Georgia">Georgia</option>
+</select>
+
+<label>લખાણનો કલર</label>
+<input type="color" id="color" value="#6d174d">
+
+<label>લખાણની સાઇઝ</label>
+<input type="range" id="size" min="12" max="45" value="22">
+
+<label>લખાણ ઉપર / નીચે કરો</label>
+<input type="range" id="position" min="-150" max="150" value="0">
+
+<hr>
+
+<label>Background ફોટો અપલોડ કરો</label>
+<input type="file" id="photo" accept="image/*">
+
+<label>Background વિડિયો અપલોડ કરો</label>
+<input type="file" id="video" accept="video/*">
+
+<div class="buttons">
+  <button id="prev">⬅ પાછળ</button>
+  <button id="next">આગળ ➜</button>
+</div>
+
+<button id="addPage">+ નવું પેજ ઉમેરો</button>
+
+</section>
+
+<!-- LIVE PREVIEW -->
+<section class="preview-panel">
+
+<h2>👁 Live Preview</h2>
+
+<div class="invitation">
+
+<img id="bg" src="images/background.png" alt="Invitation background">
+
+<video id="vid" muted loop playsinline></video>
+
+<div id="words">
+
+<div id="t"></div>
+<div id="f"></div>
+<div id="w"></div>
+<div id="d"></div>
+<div id="p"></div>
+
+</div>
+</div>
+
+<p class="preview-note">
+તમારું આમંત્રણ અહીં Live દેખાશે.
+</p>
+
+</section>
+
+</main>
+
+<footer>
+❤️ GJ Invitation - Your Dream Invitation
+</footer>
+
+<script src="script.js"></script>
 
 </body>
-    </html>
+</html>
